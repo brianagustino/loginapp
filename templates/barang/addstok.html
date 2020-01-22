@@ -1,0 +1,90 @@
+{% include './header.html' %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>General Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+ <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Quick Example</h3>
+              </div>
+
+<!--form method="post" action="/save_stok"-->
+<div class="card-body">
+                  <div class="form-group">
+                    <label for="inputbarang">Enter Nama Barang</label>
+        <select name = "barang" class="form-control , barang">
+            {% for data in bebas %}
+            <option value="{{ data.id_barang }}">
+                {{ data.nama_barang }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+   <div class="form-group">
+                    <label for="inputjumlah">Enter Jumlah Barang</label>
+        <input name="jumlah" value="" type="number" placeholder="Jumlah" autocomplete="off" required class="form-control , jumlah">
+    </div>
+    <div class="form-group">
+                    <label for="inputketerangan">Keterangan</label>
+        <input name="keterangan" value="" type="text" placeholder="Keterangan" autocomplete="off" class="form-control , keterangan">
+    </div>
+
+
+    <p>
+        <input type="Submit" value="Submit" class="btn btn-primary , simpan">
+        <a href="/stokbarang" class="btn btn-success">Back</a>
+    </p>
+
+
+
+<!--/form-->
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ </section>
+</div>
+{% include './footer.html' %}
+
+<script>
+    $(document).ready(function(){
+    $(".simpan").click(function(){
+    var barang = $(".barang").val();
+    var jumlah = $(".jumlah").val();
+    var keterangan = $(".keterangan").val();
+
+    $.ajax({
+    type:'POST',
+    url:"/save_stok",
+    data:"barang="+barang+"&jumlah="+jumlah+"&keterangan="+keterangan,
+    success:function(data){
+    alert("Successfully add stok")
+    $(".barang").val("");
+    $(".jumlah").val("");
+    $(".keterangan").val("");
+    }
+    })
+    })
+    })
+</script>

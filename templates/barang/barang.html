@@ -1,0 +1,67 @@
+{% include './header.html' %}
+  <div class="content-wrapper">
+      <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Data Barang</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Data Barang</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<section class="content">
+
+      <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="float-right">
+<a href="/barang/add" class="btn btn-primary ">add barang</a>
+</div><br>
+            </div>
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Bordered Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                    <table class="table table-bordered table-striped table-hover example">
+                        <thead>
+                        <tr>
+                        <th>
+                            Nama Barang
+                        </th>
+                         <th>
+                            Satuan
+                        </th>
+                         <th>
+                            Keterangan
+                        </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for data in bebas %}
+                        <tr>
+                             <td>{{ data.nama_barang }}</td>
+                             <td>{{ data.nama_satuan }}</td>
+                             <td>{{ data.keterangan }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+  </div>
+{% include './footer.html' %}

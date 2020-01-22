@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/karyawan/add">add karyawan</a>
+
+<table border="2">
+    <tr>
+    <th>
+        Nama
+    </th>
+     <th>
+        Umur
+    </th>
+     <th>
+        Alamat
+    </th>
+        <th>Action</th>
+    </tr>
+    {% for data in datanya %}
+    <tr>
+         <td>{{ data.nama }}</td>
+         <td>{{ data.umur }}</td>
+         <td>{{ data.alamat }}</td>
+          <td><a href="/karyawan/edit/{{ data.id }}">Edit</a> || <a href="/karyawan/delete/{{ data.id }}">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

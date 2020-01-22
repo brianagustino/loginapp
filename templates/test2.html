@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="2">
+    <tr>
+    <th>
+        Keterangan
+    </th>
+    </tr>
+    {% for data in bebas %}
+    <tr>
+         <td>{{ data.keterangan }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

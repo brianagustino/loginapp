@@ -1,0 +1,20 @@
+<doctype html>
+<title>Add User - Python Flask MySQL CRUD</title>
+<h2>Edit Karyawan</h2>
+<form method="post" action="/update_karyawan">
+    <input type="hidden" name="id" value="{{ data.id }}"/>
+    <dl>
+		<p>
+			<input name="nama"  type="text" placeholder="nama" autocomplete="off" required value="{{ data.nama }}">
+		</p>
+		<p>
+			<input name="umur" type="text" placeholder="umut" autocomplete="off" required value="{{ data.umur }}">
+		</p>
+		<p>
+			<input name="alamat"  type="text" placeholder="alamat" autocomplete="off" required value="{{ data.alamat }}" >
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
