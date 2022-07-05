@@ -33,7 +33,7 @@ MarkupSafe==1.1.1
 matplotlib==3.1.2
 mysqlclient==1.4.6
 numexpr==2.7.1
-numpy==1.18.0
+numpy==1.22.0
 oauthlib==3.1.0
 opencv-python-headless==4.1.2.30
 opt-einsum==3.1.0
