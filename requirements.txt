@@ -35,7 +35,7 @@ mysqlclient==1.4.6
 numexpr==2.7.1
 numpy==1.18.0
 oauthlib==3.1.0
-opencv-python-headless==4.1.2.30
+opencv-python-headless==4.2.0.32
 opt-einsum==3.1.0
 pandas==0.25.3
 pconst==1.0.0
